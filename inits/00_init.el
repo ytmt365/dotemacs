@@ -15,20 +15,21 @@
 ;;; 行の先頭でC-kを一回押すだけで行全体を消去する
 (setq kill-whole-line t)
 ;;; 全角スペース, 行末空白表示
-;; (defadvice font-lock-mode (before my-font-lock-mode ())
-;;   (font-lock-add-keywords
-;;    major-mode
-;;    '(("　" 0 my-face-b-1 append)
-;;      ("[ \t]+$" 0 my-face-u-1 append)
-;;      )))
-;; (ad-enable-advice 'font-lock-mode 'before 'my-font-lock-mode)
-;; (ad-activate 'font-lock-mode)
-;; (defvar my-face-b-1 'my-face-b-1)
+(defadvice font-lock-mode (before my-font-lock-mode ())
+  (font-lock-add-keywords
+   major-mode
+   '(("　" 0 my-face-b-1 append)
+     ;; ("[ \t]+$" 0 my-face-u-1 append)
+     )))
+(ad-enable-advice 'font-lock-mode 'before 'my-font-lock-mode)
+(ad-activate 'font-lock-mode)
+(defvar my-face-b-1 'my-face-b-1)
 ;; (defvar my-face-u-1 'my-face-u-1)
 ;;; 全角スペース
-;; (defface my-face-b-1 '((t (:background "NavajoWhite4"))) nil)
+(defface my-face-b-1 '((t (:background "NavajoWhite4"))) nil)
 ;;; 行末空白
 ;; (defface my-face-u-1 '((t (:background "SteelBlue" :underline t))) nil)
+(setq-default show-trailing-whitespace t)
 ;;; 置換 (対話型) query-replace
 (global-set-key (kbd "C-c q") 'query-replace)
 ;;; 置換 (非対話型) replace-string
@@ -43,5 +44,3 @@
 (global-set-key (kbd "C-c o") 'comment-or-uncomment-region)
 ;; カッコの自動挿入
 (electric-pair-mode 1)
-
-(setq-default show-trailing-whitespace t)
