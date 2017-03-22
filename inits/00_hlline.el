@@ -2,7 +2,7 @@
 (if window-system ;; GUIの場合
     (progn
       ;; ついでに文字サイズ指定
-      (add-to-list 'default-frame-alist '(font . "fontset-13.5"))
+      ;; (add-to-list 'default-frame-alist '(font . "fontset-13.5"))
       (defface hlline-face
 	'((((class color)
 	    (background dark))
