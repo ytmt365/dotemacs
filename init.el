@@ -19,7 +19,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (undo-tree yatex php-mode matlab-mode markdown-mode google-translate coffee-mode))))
+    (less-css-mode undo-tree yatex php-mode matlab-mode markdown-mode google-translate coffee-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

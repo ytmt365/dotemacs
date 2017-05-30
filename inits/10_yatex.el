@@ -4,9 +4,11 @@
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 (setq tex-command "platex")
 (setq dviprint-command-format "dvipdfmx %s")
-(setq dvi2-command "open")
+(setq dvi2-command "open -a Preview")
 (setq bibtex-command "pbibtex")
 (setq YaTeX-dvi2-command-ext-alist
-  '(("[agx]dvi\\|dviout\\|emacsclient" . ".dvi")
+  '(("xdvi" . ".dvi")
     ("ghostview\\|gv" . ".ps")
-    ("acroread\\|pdf\\|Preview\\|TeXShop\\|Skim\\|evince\\|apvlv\\|open" . ".pdf")))
+    ("acroread\\|pdf\\|Preview\\|open" . ".pdf")))
+
+(setq YaTeX-environment-indent 2)
