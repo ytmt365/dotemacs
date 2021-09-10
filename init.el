@@ -18,11 +18,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (less-css-mode undo-tree yatex php-mode matlab-mode markdown-mode google-translate coffee-mode))))
+   '(company-go php-mode go-eldoc less-css-mode undo-tree yatex matlab-mode markdown-mode google-translate coffee-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; (require 'go-eldoc)
+;; (add-hook 'go-mode-hook 'go-eldoc-setup)
